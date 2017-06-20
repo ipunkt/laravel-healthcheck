@@ -26,7 +26,7 @@ return [
 	/**
 	 * Database options:
 	 *
-	 * Database => tablename.
+	 * 'database' => 'tablename'.
 	 * Tested by doing a select limit 1 on
 	 */
 	'database' => [
@@ -34,7 +34,9 @@ return [
 	],
 
 	/**
-	 * Array of pathes to check for write access
+	 * Storage options:
+	 *
+	 * '/path/to/check/'
 	 * Tested by trying to write the current date to PATH/healthcheck.txt
 	 */
 	'storage' => [
