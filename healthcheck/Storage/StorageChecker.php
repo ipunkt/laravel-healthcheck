@@ -18,13 +18,18 @@ class StorageChecker implements Checker {
 	 * @var FileWriter
 	 */
 	private $fileWriter;
+	/**
+	 * @var DateMaker
+	 */
+	private $dateMaker;
 
 	/**
 	 * StorageChecker constructor.
 	 * @param FileWriter $fileWriter
 	 */
-	public function __construct( FileWriter $fileWriter) {
+	public function __construct( FileWriter $fileWriter, DateMaker $dateMaker) {
 		$this->fileWriter = $fileWriter;
+		$this->dateMaker = $dateMaker;
 	}
 
 	/**
@@ -43,7 +48,7 @@ class StorageChecker implements Checker {
 	protected function checkPath( $path ) {
 
 		$file = $path.'/healthcheck.txt';
-		$date = date('Y-m-d H:i:s');
+		$date = $this->dateMaker->currentDate();
 
 		if( $this->fileWriter->write($file, $date) === false )
 			throw new CheckFailedException("Failed to write to $path");
