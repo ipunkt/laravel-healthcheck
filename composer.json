@@ -1,0 +1,24 @@
+{
+  "name": "ipunkt/laravel-healthcheck",
+  "description": "configurable healthcheck route for laravel",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sven Speckmaier",
+      "email": "sps@ipunkt.biz"
+    }
+  ],
+  "autoload":{
+    "psr-4":{
+      "Ipunkt\\LaravelHealthcheck\\":"healthcheck"
+    }
+  },
+  "require": {
+    "illuminate/support": "^5.0",
+    "illuminate/database": "^5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.0"
+  }
+}
