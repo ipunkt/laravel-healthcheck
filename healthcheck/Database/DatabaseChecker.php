@@ -26,7 +26,7 @@ class DatabaseChecker implements Checker {
 			try {
 				DB::connection($databaseName)->table($databaseTable)->take(1)->get();
 			} catch(QueryException $e) {
-				throw new CheckFailedException("Failed to connect to databsae $databaseName");
+				throw new CheckFailedException("Failed to connect to database $databaseName");
 			}
 		}
 	}
