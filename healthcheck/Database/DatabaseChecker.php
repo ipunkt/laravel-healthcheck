@@ -1,7 +1,9 @@
 <?php namespace Ipunkt\LaravelHealthcheck\Database;
 
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
 use Ipunkt\LaravelHealthcheck\HealthChecker\Checker;
+use Ipunkt\LaravelHealthcheck\HealthChecker\CheckFailedException;
 use Ipunkt\LaravelHealthcheck\HealthChecker\Factory\HealthcheckNotFoundException;
 
 /**
@@ -19,8 +21,14 @@ class DatabaseChecker implements Checker {
 	 * @throws HealthcheckNotFoundException
 	 */
 	public function check() {
-		foreach($this->databaseNames as $databaseName => $databaseTable)
-			DB::connection($databaseName)->table($databaseTable)->take(1)->get();
+		foreach($this->databaseNames as $databaseName => $databaseTable) {
+
+			try {
+				DB::connection($databaseName)->table($databaseTable)->take(1)->get();
+			} catch(QueryException $e) {
+				throw new CheckFailedException("Failed to connect to databsae $databaseName");
+			}
+		}
 	}
 
 	/**
