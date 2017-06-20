@@ -1,4 +1,6 @@
-<?php
+<?php namespace Ipunkt\LaravelHealthcheck;
+
+use Ipunkt\LaravelHealthcheck\HealthChecker\HealthChecker;
 
 /**
  * Class HealthcheckProvider
@@ -31,7 +33,7 @@ class HealthcheckProvider extends \Illuminate\Support\ServiceProvider {
 		$this->app->bind('Ipunkt\LaravelHealthcheck\HealthChecker\HealthChecker', function($app) {
 			$factory = $app->make('Ipunkt\LaravelHealthcheck\HealthChecker\Factory\HealthcheckerFactory');
 
-			return new Ipunkt\LaravelHealthcheck\HealthChecker\HealthChecker( $factory, config('healthcheck') );
+			return new HealthChecker( $factory, config('healthcheck') );
 		});
 	}
 }
