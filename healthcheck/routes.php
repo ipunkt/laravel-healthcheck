@@ -2,4 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get( config('healtcheck.route'), 'Ipunkt\LaravelHealthcheck\Controllers\HealthcheckController@healthcheck' );
+Route::get( config('healthcheck.route'), 'Ipunkt\LaravelHealthcheck\Controllers\HealthcheckController@healthcheck' );
