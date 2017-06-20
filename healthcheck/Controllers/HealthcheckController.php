@@ -41,7 +41,7 @@ class HealthcheckController {
 	public function makeResponse( $content, $code ) {
 		$response = response($content, $code);
 
-		$headers = config('healthcheck.headers');
+		$headers = config('healthcheck.headers', []);
 		foreach($headers as $headerName => $headerValue)
 			$response->header($headerName, $headerValue);
 
