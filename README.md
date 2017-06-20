@@ -1,28 +1,19 @@
 # laravel-healthcheck
 configurable healthcheck route for laravel
 
-## Usage
-To use the default options simply do:
-
+## Install
+	composer require ipunkt/laravel-healthcheck:^1.0.0
 	php artisan vendor:publish
-	
-## Customize
+
+## Usage
 Edit the config file `config/healthcheck.php`
 
-Add more checkers to `healtcheck.checkers`. Available checkers are:
-- `database`
-- `storage`
+see the comments there for more infromation
 
-Add options to `healthcheck.CHECKERNAME => [ 'option' => 'value' ]`
+### Available checkers
+- `database` Tests database connections via Eloquent
+- `storage` Tests write access to filesystem pathes
 
-## Checkers
-
-### Database
-Attempts to open a database connection to the default database.
-
-### Storage
-Attempts to write a file to 
-	
 ## Extend
 To add a new Healthchecker implement `Ipunkt\LaravelHealthcheck\HealthChecker\Checker` and register it with the
 `Ipunkt\LaravelHealthcheck\HealthChecker\Factory\HealthcheckerFactory`.
@@ -31,7 +22,7 @@ ServiceProvider and register your Checker.
 
 ### HealthcheckerFactory::register
 - string $identifier - the identifier which will activate the checker when added to `config('healthcheck.checks')`
-- Closure function(array $config) { return new Checker; } - Callback to make the Checker. Receives `$config('healthcheck.$identifier'')` as parameter.
+- Closure function(array $config) { return new Checker; } - Callback to make the Checker. Receives `$config('healthcheck.$identifier')` as parameter.
 
 ### Example
 ```php
@@ -45,11 +36,11 @@ class ServiceProvider {
 
 		$factory->register('identifier', function(array $config) {
 		
-			$newChecker = new Checker;
+			$newChecker = new ExampleChecker;
 			
 			$newChecker->setExampleOption( array_get($config, 'url', 'http://www.example.com') );
 		
-			return ExampleChecker;
+			return $newChecker;
 			
 		});
 		
