@@ -39,7 +39,7 @@ class HealthChecker {
 	}
 
 	public function check(  ) {
-		$checkerNames = array_get( $this->config, 'checkers', [] );
+		$checkerNames = array_get( $this->config, 'checks', [] );
 
 		foreach($checkerNames as $checkerName) {
 			$checker = $this->getChecker($checkerName );
