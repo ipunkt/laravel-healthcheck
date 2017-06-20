@@ -13,7 +13,7 @@ class HealthcheckProvider extends \Illuminate\Support\ServiceProvider {
 		$factory = $this->app->make( $factoryClasspath );
 		$this->app->instance($factoryClasspath, $factory);
 
-		$checkerProviders = require_once __DIR__.'/checkers.php';
+		$checkerProviders = require __DIR__.'/checkers.php';
 		foreach($checkerProviders as $checkerProviderClasspath)
 			$this->app->register( $checkerProviderClasspath );
 
