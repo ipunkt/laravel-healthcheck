@@ -28,7 +28,7 @@ class RedisConnnectionChecker {
 		try {
 			$connection = $this->redis->connection( $connection );
 			$connection->connect();
-		} catch(Predis\Network\ConnectionException $exception) {
+		} catch(\Predis\Connection\ConnectionException $exception) {
 			return false;
 		}
 
