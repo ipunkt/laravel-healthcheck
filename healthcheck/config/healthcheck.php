@@ -42,4 +42,14 @@ return [
 	'storage' => [
 		storage_path()
 	],
+
+	/**
+	 * Redis options:
+	 *
+	 * 'redis connection name'
+	 * Redis connection name to test
+	 */
+	'redis' => [
+
+	]
 ];
