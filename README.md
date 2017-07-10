@@ -5,6 +5,8 @@ configurable healthcheck route for laravel
 	composer require ipunkt/laravel-healthcheck:^1.0.0
 	php artisan vendor:publish
 
+Add the `\Ipunkt\LaravelHealthcheck\HealthcheckProvider::class,` to your `providers` section in `config/app.php`.
+
 ## Usage
 Edit the config file `config/healthcheck.php`
 
