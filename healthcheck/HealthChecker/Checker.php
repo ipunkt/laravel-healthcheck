@@ -1,16 +1,14 @@
 <?php namespace Ipunkt\LaravelHealthcheck\HealthChecker;
 
-use Ipunkt\LaravelHealthcheck\HealthChecker\Factory\HealthcheckNotFoundException;
-
 /**
  * Interface Checker
  * @package Ipunkt\LaravelHealthcheck\HealthChecker
  */
-interface Checker {
-
-	/**
-	 * @throws HealthcheckNotFoundException
-	 */
-	function check();
+interface Checker
+{
+    /**
+     * @throws CheckFailedException
+     */
+    public function check();
 
 }

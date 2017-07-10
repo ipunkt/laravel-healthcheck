@@ -5,7 +5,7 @@
 configurable healthcheck route for laravel
 
 ## Install
-	composer require ipunkt/laravel-healthcheck:^1.0.0
+	composer require ipunkt/laravel-healthcheck
 
 Add the `\Ipunkt\LaravelHealthcheck\HealthcheckProvider::class,` to your `providers` section in `config/app.php`.
 
@@ -20,6 +20,7 @@ see the comments there for more information
 - `database` Tests database connections via Eloquent
 - `storage` Tests write access to filesystem paths
 - `redis` Tests for accessing redis queue service
+- `solr` Tests for accessing solr services (needs extra package solarium/solarium)
 
 ## Extend
 To add a new Healthchecker implement `Ipunkt\LaravelHealthcheck\HealthChecker\Checker` and register it with the
