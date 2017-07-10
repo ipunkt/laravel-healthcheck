@@ -1,10 +1,12 @@
 <?php namespace Ipunkt\LaravelHealthcheck\HealthChecker\Factory;
 
+use Ipunkt\LaravelHealthcheck\HealthChecker\CheckFailedException;
+
 /**
  * Class HealthcheckNotFoundException
  * @package Ipunkt\LaravelHealthcheck\HealthChecker\Factory
  */
-class HealthcheckNotFoundException extends \RuntimeException {
+class HealthcheckNotFoundException extends CheckFailedException {
 	/**
 	 * @var string
 	 */

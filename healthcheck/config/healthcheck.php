@@ -18,6 +18,7 @@ return [
 	 * - database
 	 * - storage
 	 * - redis
+	 * - solr (needs solarium/solarium package)
 	 */
 	'checks' => [
 		'database',
@@ -52,6 +53,20 @@ return [
 	 * Redis connection name to test
 	 */
 	'redis' => [
+//        'default',
+	],
 
-	]
+    /**
+     * Solr options
+     * Array of instance configuration, each has to configure host, port, path and core
+     */
+    'solr' => [
+        //  solr instance check
+        [
+            'host' => '',
+            'port' => 9893,
+            'path' => '/solr/',
+            'core' => 'default',
+        ],
+    ],
 ];
