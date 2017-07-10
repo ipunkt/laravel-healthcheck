@@ -16,6 +16,7 @@ see the comments there for more infromation
 ### Available checkers
 - `database` Tests database connections via Eloquent
 - `storage` Tests write access to filesystem pathes
+- `redis` Tests for accessing redis queue service
 
 ## Extend
 To add a new Healthchecker implement `Ipunkt\LaravelHealthcheck\HealthChecker\Checker` and register it with the
