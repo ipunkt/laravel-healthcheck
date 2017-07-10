@@ -12,11 +12,19 @@ class SolrChecker implements Checker
      */
     private $clientInstances = [];
 
+    /**
+     * configure solr checker
+     *
+     * @param array $config
+     * @throws \Solarium\Exception\InvalidArgumentException
+     */
     public function configure(array $config)
     {
         foreach ($config as $instance) {
-            if (!empty(array_get($instance, 'host'))) {
+            try {
                 $this->clientInstances[] = new Client($instance);
+            } catch (\Exception $e) {
+                throw new InvalidArgumentException('Client is not working', 0, $e);
             }
         }
     }

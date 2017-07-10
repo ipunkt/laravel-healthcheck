@@ -63,10 +63,17 @@ return [
     'solr' => [
         //  solr instance check
         [
-            'host' => '',
-            'port' => 9893,
-            'path' => '/solr/',
-            'core' => 'default',
+            'endpoint' => [
+                'default' => [
+                    'host' => '',
+                    'port' => 9893,
+                    'path' => '/solr/',
+                    'core' => 'default',
+                    'username' => null,
+                    'password' => null,
+                    'timeout' => 30,
+                ],
+            ],
         ],
     ],
 ];
