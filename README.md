@@ -14,7 +14,7 @@ Add the `\Ipunkt\LaravelHealthcheck\HealthcheckProvider::class,` to your `provid
 ## Usage
 Edit the config file `config/healthcheck.php`
 
-see the comments there for more infromation
+see the comments there for more information
 
 ### Available checkers
 - `database` Tests database connections via Eloquent
@@ -35,29 +35,29 @@ ServiceProvider and register your Checker.
 ```php
 class ServiceProvider {
 	public function boot() {
-	
+
 		/**
 		 * @var HealthcheckerFactory $factory
 		 */
 		$factory = $this->app->make('Ipunkt\LaravelHealthcheck\HealthChecker\Factory\HealthcheckerFactory');
 
 		$factory->register('identifier', function(array $config) {
-		
+
 			$newChecker = new ExampleChecker;
-			
+
 			$newChecker->setExampleOption( array_get($config, 'url', 'http://www.example.com') );
-		
+
 			return $newChecker;
-			
+
 		});
-		
+
 	}
 }
 
 class ExampleChecker implement Ipunkt\LaravelHealthcheck\HealthChecker\Checker {
 
 	protected $url;
-	
+
 	public function setExampleOption($url) {
 		$this->url = $url;
 	}
