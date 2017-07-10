@@ -1,4 +1,7 @@
-# laravel-healthcheck
+# Laravel Health Check
+
+[![Latest Stable Version](https://poser.pugx.org/ipunkt/laravel-healthcheck/v/stable.svg)](https://packagist.org/packages/ipunkt/laravel-healthcheck) [![Latest Unstable Version](https://poser.pugx.org/ipunkt/laravel-healthcheck/v/unstable.svg)](https://packagist.org/packages/ipunkt/laravel-healthcheck) [![License](https://poser.pugx.org/ipunkt/laravel-healthcheck/license.svg)](https://packagist.org/packages/ipunkt/laravel-healthcheck) [![Total Downloads](https://poser.pugx.org/ipunkt/laravel-healthcheck/downloads.svg)](https://packagist.org/packages/ipunkt/laravel-healthcheck)
+
 configurable healthcheck route for laravel
 
 ## Install
