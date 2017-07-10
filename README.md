@@ -18,7 +18,7 @@ see the comments there for more information
 
 ### Available checkers
 - `database` Tests database connections via Eloquent
-- `storage` Tests write access to filesystem pathes
+- `storage` Tests write access to filesystem paths
 - `redis` Tests for accessing redis queue service
 
 ## Extend
