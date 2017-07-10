@@ -17,10 +17,12 @@ return [
 	 * Available:
 	 * - database
 	 * - storage
+	 * - redis
 	 */
 	'checks' => [
 		'database',
-		'storage'
+		'storage',
+		'redis',
 	],
 
 	/**
