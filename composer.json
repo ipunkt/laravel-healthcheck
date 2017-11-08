@@ -25,5 +25,12 @@
 	},
 	"suggest": {
 		"solarium/solarium": "Necessary to check Apache Solr instance"
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Ipunkt\\LaravelHealthcheck\\HealthcheckProvider"
+			]
+		}
 	}
 }
