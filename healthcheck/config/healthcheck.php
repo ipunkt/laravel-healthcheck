@@ -29,11 +29,11 @@ return [
 	/**
 	 * Database options:
 	 *
-	 * 'database' => 'tablename'.
+	 * 'database connection name' => 'tablename'.
 	 * Tested by doing a select limit 1 on
 	 */
 	'database' => [
-		'dbname' => 'dbtable',
+		env('DB_CONNECTION', 'mysql') => 'users',
 	],
 
 	/**
