@@ -1,5 +1,6 @@
 <?php namespace Ipunkt\LaravelHealthcheck\HealthChecker;
 
+use Illuminate\Support\Arr;
 use Ipunkt\LaravelHealthcheck\HealthChecker\Factory\HealthcheckerFactory;
 
 /**
@@ -31,7 +32,7 @@ class HealthChecker {
 	 * @return Checker
 	 */
 	protected function getChecker( $name ) {
-		$config = array_get( $this->config, $name, []);
+		$config = Arr::get( $this->config, $name, []);
 
 		$checker = $this->factory->make($name, $config);
 
@@ -39,7 +40,7 @@ class HealthChecker {
 	}
 
 	public function check(  ) {
-		$checkerNames = array_get( $this->config, 'checks', [] );
+		$checkerNames = Arr::get( $this->config, 'checks', [] );
 
 		foreach($checkerNames as $checkerName) {
 			$checker = $this->getChecker($checkerName );
